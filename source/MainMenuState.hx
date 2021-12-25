@@ -116,7 +116,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
-			menuItem.x += 250;
+			menuItem.x += 90;
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
@@ -128,7 +128,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 		
-		char1 = new Character(800, -130, 'mario', true);
+		char1 = new Character(400, 0, 'mario', true);
 		char1.setGraphicSize(Std.int(char1.width * 0.8));
 		add(char1);
 		char1.visible = false;
