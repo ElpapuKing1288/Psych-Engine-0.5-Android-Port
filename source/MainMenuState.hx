@@ -45,7 +45,6 @@ class MainMenuState extends MusicBeatState
 	private var char1:Character = null;
 	private var char2:Character = null;
 	private var char3:Character = null;
-	private var char4:Character = null;
 	var debugKeys:Array<FlxKey>;
 
 	override function create()
@@ -128,29 +127,23 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 		
-		char1 = new Character(990, 50, 'mario', true);
+		char1 = new Character(950, 40, 'mario', true);
 		
 		char1.setGraphicSize(Std.int(char1.width * 0.8));
 		add(char1);
 		char1.visible = false;
 		
-		char2 = new Character(990, -130, 'luigi', true);
+		char2 = new Character(915, -90, 'luigi', true);
 		
 			char2.setGraphicSize(Std.int(char2.width * 0.8));
 		add(char2);
 		char2.visible = false;
 		
-		char3 = new Character(999, 35, 'bf', true);
+		char3 = new Character(865, -230, 'bf', true);
 		
-			char3.setGraphicSize(Std.int(char3.width * 0.4));
+			char3.setGraphicSize(Std.int(char3.width * 0.6));
 		add(char3);
 		char3.visible = false;
-		
-		char4 = new Character(999, 5, 'gf+peach', true);
-		
-			char3.setGraphicSize(Std.int(char4.width * 0.6));
-		add(char4);
-		char4.visible = false;
 		
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
@@ -249,21 +242,6 @@ class MainMenuState extends MusicBeatState
 		else
 		{
 		    char3.visible = false;
-		}
-		
-		
-		if (optionShit[curSelected] == 'options')
-		{
-		    changeItem(-1);
-		    changeItem(1);
-		    
-		    char4.dance();
-		    char4.updateHitbox();
-		    char4.visible = true;
-		}
-		else
-		{
-		    char4.visible = false;
 		}
 		
 		if (!selectedSomethin)
